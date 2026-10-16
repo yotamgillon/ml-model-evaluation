@@ -91,7 +91,7 @@ This experiment uses **SYNTHETIC data**, not real patient data: a 569 x 500 matr
 | precision | 0.6129 | 0.0940 | 0.3473 | 0.0705 | +0.2656 |
 | f1 | 0.4544 | 0.0578 | 0.2643 | 0.0601 | +0.1901 |
 
-- **WRONG way (SYNTHETIC):** selecting the 10 "best" noise columns using all labels first gives ROC AUC 0.6654 on pure noise, well above 0.5000. Among 500 random columns some correlate with the labels by chance, and selecting them on all rows lets that chance correlation leak into the test folds.
+- **WRONG way (SYNTHETIC):** selecting the 10 "best" noise columns using all labels first gives ROC AUC 0.6654 on pure noise, well above 0.5000. Among 500 random columns some correlate with the labels by chance, and selecting them on all rows lets that chance correlation leak into the test folds. (standard explanation, not separately tested here)
 - **RIGHT way (SYNTHETIC):** selection inside the pipeline gives ROC AUC 0.4737, about chance. It is slightly below 0.5000. A value below chance on pure noise is a known effect under cross-validation; I did not investigate it further.
 
 Source: `results/leakage.md` (also `results/leakage_real.csv` and `results/leakage_synthetic.csv`, which carry a `data` column with `real` or `synthetic`).
@@ -110,7 +110,7 @@ In a medical screening setting a missed malignant case (a false negative) is usu
 - **No external validation.** Everything is evaluated by cross-validation on one dataset.
 - **One seed for the committed results** (42). Other seeds will give somewhat different numbers.
 - **Dependencies are not pinned,** only lower bounds are set in `requirements.txt`.
-- **CI:** a GitHub Actions workflow (`.github/workflows/ci.yml`) is defined for Python 3.10 and 3.13. I have not yet confirmed that it passes on GitHub. Locally the project was run on Python 3.13 only.
+- **CI:** the workflow (`.github/workflows/ci.yml`) runs lint and tests on Python 3.10 and 3.13 on every push, and both passed on GitHub for commit d85f3f7. Locally the project was run on Python 3.13 only.
 
 ## Versions
 
