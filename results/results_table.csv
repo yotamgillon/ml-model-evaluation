@@ -1,0 +1,5 @@
+model,roc_auc_mean,roc_auc_std,recall_mean,recall_std,precision_mean,precision_std,f1_mean,f1_std
+Dummy (most frequent),0.5,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Logistic regression,0.9948,0.0054,0.9576,0.0339,0.9856,0.0153,0.9711,0.02
+Random forest,0.9898,0.0089,0.9344,0.0483,0.9563,0.0351,0.9441,0.0283
+Gradient boosting,0.9911,0.0086,0.9316,0.0425,0.9596,0.0326,0.9445,0.0257

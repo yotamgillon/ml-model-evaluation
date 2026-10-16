@@ -1,0 +1,5 @@
+metric,wrong_mean,wrong_std,right_mean,right_std,gap,data
+roc_auc,0.9878,0.0087,0.9877,0.0087,0.0,real
+recall,0.9278,0.0439,0.9283,0.0443,-0.0005,real
+precision,0.9467,0.0306,0.9467,0.0313,-0.0,real
+f1,0.9364,0.0276,0.9366,0.0284,-0.0003,real
